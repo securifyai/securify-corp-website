@@ -409,6 +409,55 @@ body.page--policy {
   color: #ffffff;
 }
 
+.delete-form {
+  display: grid;
+  gap: 1.25rem;
+  margin: 0 0 1.5rem;
+}
+
+.form-field {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.form-field label {
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  color: rgba(255, 244, 238, 0.85);
+}
+
+.form-field input,
+.form-field textarea {
+  font: inherit;
+  color: #fff4ee;
+  background: rgba(255, 244, 238, 0.1);
+  border: 1px solid rgba(255, 244, 238, 0.25);
+  border-radius: 12px;
+  padding: 0.7rem 0.9rem;
+  resize: vertical;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: rgba(255, 244, 238, 0.45);
+}
+
+.form-field input:focus-visible,
+.form-field textarea:focus-visible {
+  outline: 2px solid rgba(255, 244, 238, 0.6);
+  outline-offset: 2px;
+}
+
+.delete-form .button {
+  justify-self: start;
+  border: none;
+  cursor: pointer;
+}
+
+.form-fallback {
+  max-width: 58ch;
+}
+
 @media (max-width: 820px) {
   .site-header {
     align-items: flex-start;

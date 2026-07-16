@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete My Information | Securify</title>
+    <meta
+      name="description"
+      content="Request deletion of your personal information from Securify, in accordance with GDPR."
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="page--policy">
+    <main class="policy-page">
+      <article class="policy-card" aria-labelledby="delete-info-title">
+        <p class="policy-eyebrow">Securify</p>
+        <h1 id="delete-info-title">delete my information</h1>
+        <p class="policy-intro">
+          Under the General Data Protection Regulation (GDPR), you have the
+          right to request deletion of your personal information from
+          Securify. Fill in the form below and click "Send Request" &mdash;
+          it will open your email client with a pre-filled message addressed
+          to
+          <a class="policy-link" href="mailto:privacy@securifyapp.com"
+            >privacy@securifyapp.com</a
+          >. Review it and send it to submit your request.
+        </p>
+
+        <form class="delete-form" id="delete-form">
+          <div class="form-field">
+            <label for="email">Email address *</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              autocomplete="email"
+              placeholder="you@example.com"
+            />
+          </div>
+
+          <div class="form-field">
+            <label for="full-name">Full name</label>
+            <input
+              type="text"
+              id="full-name"
+              name="full-name"
+              autocomplete="name"
+              placeholder="Jane Doe"
+            />
+          </div>
+
+          <div class="form-field">
+            <label for="details">Additional details</label>
+            <textarea
+              id="details"
+              name="details"
+              rows="4"
+              placeholder="Anything else that helps us find and delete your data (optional)"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="button">Send Request</button>
+        </form>
+
+        <p class="policy-meta form-fallback">
+          If the button above doesn't open your email client, you can email
+          your request directly to
+          <a class="policy-link" href="mailto:privacy@securifyapp.com"
+            >privacy@securifyapp.com</a
+          >.
+        </p>
+      </article>
+    </main>
+
+    <script>
+      document
+        .getElementById("delete-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          var email = document.getElementById("email").value.trim();
+          var fullName = document.getElementById("full-name").value.trim();
+          var details = document.getElementById("details").value.trim();
+
+          var bodyLines = [
+            "I am requesting deletion of my personal information under GDPR.",
+            "",
+            "Email: " + email,
+          ];
+          if (fullName) {
+            bodyLines.push("Full name: " + fullName);
+          }
+          if (details) {
+            bodyLines.push("", "Additional details:", details);
+          }
+
+          var subject = encodeURIComponent("Data Deletion Request");
+          var body = encodeURIComponent(bodyLines.join("\n"));
+
+          window.location.href =
+            "mailto:privacy@securifyapp.com?subject=" +
+            subject +
+            "&body=" +
+            body;
+        });
+    </script>
+  </body>
+</html>
