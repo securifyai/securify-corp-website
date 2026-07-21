@@ -297,6 +297,47 @@ h3 {
   font-size: 0.9rem;
 }
 
+body.page--support {
+  display: flex;
+  min-height: 100vh;
+  min-height: 100dvh;
+  flex-direction: column;
+}
+
+.page--support main {
+  display: flex;
+  flex: 1;
+}
+
+.support {
+  display: flex;
+  min-height: auto;
+  flex: 1;
+  align-items: center;
+}
+
+.support__content {
+  max-width: 760px;
+}
+
+.support__content .section-label {
+  margin-bottom: 1rem;
+}
+
+.support__content h1 {
+  max-width: 10ch;
+}
+
+.support__email {
+  margin: 1.25rem 0 0;
+  color: var(--muted);
+}
+
+.support__email a {
+  color: var(--accent);
+  font-weight: 650;
+}
+
 body.page--policy {
   overflow-x: hidden;
   overflow-y: auto;
