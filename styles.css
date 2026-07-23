@@ -297,6 +297,23 @@ h3 {
   font-size: 0.9rem;
 }
 
+.footer-links {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.footer-links a {
+  color: inherit;
+  font-size: 0.9rem;
+  text-decoration: underline;
+}
+
+.footer-links a:hover {
+  color: #f7f8f6;
+}
+
 body.page--support {
   display: flex;
   min-height: 100vh;
